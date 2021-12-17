@@ -111,12 +111,14 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
 
     confirm_yes = questionary.confirm("Do you want to save your qualifying loan?").ask()
-    csvpath = Path('qualifying_loans.csv')
-    save_csv(csvpath, qualifying_loans)
-    if not csvpath.exists():
-        sys.exit(f"Oops! Can't find this path: {csvpath}")
+    
+    print(confirm_yes)
 
-
+    if confirm_yes == True:
+        csvpath = Path(questionary.text("Enter a file path where you want to save").ask())
+        save_csv(csvpath, qualifying_loans)
+        if not csvpath.exists():
+            sys.exit(f"Oops! Can't find this path: {csvpath}")
 
 
 def run():
