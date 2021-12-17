@@ -108,7 +108,7 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
+    #usability dialog for savings the CSV Files.
 
     confirm_yes = questionary.confirm("Do you want to save your qualifying loan?").ask()
     
